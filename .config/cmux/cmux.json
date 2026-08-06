@@ -1,0 +1,27 @@
+{
+  "$schema" : "https://raw.githubusercontent.com/manaflow-ai/cmux/main/web/data/cmux.schema.json",
+  "schemaVersion" : 1,
+  "shortcuts" : {
+    "bindings" : {
+      "globalSearch" : {
+        "first" : {
+          "command" : true,
+          "control" : true,
+          "key" : "f",
+          "keyCode" : 3,
+          "option" : true,
+          "shift" : false
+        }
+      },
+      "toggleFullScreen" : {
+        "first" : {
+          "command" : false,
+          "control" : false,
+          "key" : "",
+          "option" : false,
+          "shift" : false
+        }
+      }
+    }
+  }
+}
