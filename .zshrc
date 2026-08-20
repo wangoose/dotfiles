@@ -312,9 +312,23 @@ unset __mamba_setup
 # <<< mamba initialize <<<
 
 # Codex
-alias cah="conda activate headroom"
 alias coc="vim ~/.codex/config.toml"
+
+# Headroom
 alias hdr="HEADROOM_TELEMETRY=off headroom"
+alias cdx="hdr wrap codex --code-memory none"
+
+# Serena
+ser() {
+  local port="${1:-9121}"
+  local project="${2:-$(pwd)}"
+
+  serena start-mcp-server \
+    --transport streamable-http \
+    --port "$port" \
+    --context codex \
+    --project "$project"
+}
 
 # SDKMAN
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
