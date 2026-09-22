@@ -29,22 +29,6 @@
                         ]
                     },
                     {
-                        "description": "Escape → English",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "escape",
-                                    "modifiers": { "optional": ["any"] }
-                                },
-                                "to": [
-                                    { "key_code": "escape" },
-                                    { "select_input_source": { "language": "^en$" } }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
                         "description": "F13 + h/j/k/l → Arrow left/down/up/right",
                         "manipulators": [
                             {
