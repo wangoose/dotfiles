@@ -1,10 +1,11 @@
-#! /bin/zsh
+#!/bin/zsh
 
 if [[ -z "$1" ]]; then
   echo "usage: gmdh \"yyyy-MM-dd HH:mm:ss\""
-  return 1
+  exit 1
 fi
 
 GIT_AUTHOR_DATE="$1" \
 GIT_COMMITTER_DATE="$1" \
 git commit --amend --reset-author --no-edit
+

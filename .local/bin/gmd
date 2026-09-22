@@ -337,3 +337,4 @@ git log \
   -n 10 \
   --date=iso-local \
   --format='%C(auto)%h%Creset  %cd  %s'
+
