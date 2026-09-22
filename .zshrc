@@ -112,22 +112,17 @@ alias pbp="pbpaste"
 
 alias zrc="vim ~/.zshrc"
 alias zsc="source ~/.zshrc"
-export PATH="$HOME/.local/bin:$PATH"
-[[ -f "$HOME/.env" ]] && source "$HOME/.env"
-[[ -f "$HOME/.env.local" ]] && source "$HOME/.env.local"
-
-# Brew
-export PATH=/opt/homebrew/bin:$PATH
 
 # Starship
+if [[ -n "$SSH_CONNECTION" ]]; then
+  export STARSHIP_CONFIG="$HOME/.config/starship/starship-xterm-256color.toml"
+else
+  export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
+fi
+
 eval "$(starship init zsh)"
-export STARSHIP_CONFIG=~/.config/starship.toml
-export LANG=en_US.UTF-8
-export LC_ALL=en_US.UTF-8
 
 # ADB
-export PATH=~/Library/Android/sdk/platform-tools:$PATH
-
 alias adbb="eval adb \$("android-select-device.sh")"
 alias adbd="adb devices -l"
 alias adbk="adb kill-server; adb start-server"
@@ -311,14 +306,28 @@ fi
 unset __mamba_setup
 # <<< mamba initialize <<<
 
-# Codex
+# Codex CLI with Headroom + Serena
 alias coc="vim ~/.codex/config.toml"
 
-# Headroom
-alias hdr="HEADROOM_TELEMETRY=off headroom"
-alias cdx="hdr wrap codex --code-memory none"
+cdx() {
+  if [[ "$1" =~ ^[0-9]+$ ]]; then
+    local port="$1"; shift
+    headroom wrap codex --code-memory none -c "mcp_servers.serena.url=\"http://127.0.0.1:${port}/mcp\"" "$@"
+  else
+    headroom wrap codex --code-memory none "$@"
+  fi
+}
 
-# Serena
+cdx-df() {
+  if [[ "$1" =~ ^[0-9]+$ ]]; then
+    local port="$1"; shift
+    CODEX_HOME=~/.codex-df headroom wrap codex --code-memory none -c "mcp_servers.serena.url=\"http://127.0.0.1:${port}/mcp\"" "$@"
+  else
+    CODEX_HOME=~/.codex-df headroom wrap codex --code-memory none "$@"
+  fi
+}
+
+# Start Serena MCP Server over Streamable HTTP
 ser() {
   local port="${1:-9121}"
   local project="${2:-$(pwd)}"
