@@ -270,8 +270,8 @@ scrrrt() {
     --video-buffer=200
 }
 
-# FNM
-eval "$(fnm env --use-on-cd)"
+# Mise
+eval "$(mise activate zsh)"
 
 # Mole shell completion
 if output="$(mole completion zsh 2>/dev/null)"; then eval "$output"; fi
@@ -338,9 +338,4 @@ ser() {
     --context codex \
     --project "$project"
 }
-
-# SDKMAN
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
