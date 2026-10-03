@@ -1,64 +1,70 @@
-ENV["UV_PYTHON"] = "3.13"
-
 tap "darrylmorley/whatcable", trusted: { casks: ["whatcable"] }
-tap "oven-sh/bun", trusted: true
 tap "postmelee/tap"
 tap "xcodesorg/made", trusted: { formulae: ["xcodes"] }
 
-brew "bun"
-brew "fnm"
 brew "fzf"
 brew "gdu"
 brew "git-lfs"
 brew "lsd"
 brew "mas"
+brew "mise"
 brew "mole"
+brew "mosh"
+brew "resterm"
+brew "ripgrep"
 brew "rtk"
 brew "starship"
+brew "tmux"
 brew "uv"
+brew "w3m"
 brew "yadm"
 
 cask "aldente"
 cask "postmelee/tap/alhangeul", trusted: true
-cask "appcleaner"
 cask "betterdisplay"
 cask "bettertouchtool"
 cask "chatgpt"
+cask "chatgpt-classic"
 cask "cmux"
 cask "cyberduck"
 cask "figma"
-cask "finetune"
 cask "font-d2coding-nerd-font"
+cask "font-noto-sans-cjk-kr"
 cask "google-chrome"
+cask "homebrew-app"
 cask "iina"
 cask "jetbrains-toolbox"
 cask "karabiner-elements"
 cask "keka"
-cask "linearmouse"
+cask "linear"
 cask "localsend"
 cask "notion"
 cask "obsidian"
-cask "ollama-app"
 cask "postman"
 cask "raycast"
 cask "rectangle"
+cask "rustdesk"
 cask "slack"
 cask "spotify"
-cask "stats"
 cask "sublime-text"
 cask "tailscale-app"
+cask "telegram"
+cask "thunderbird"
+cask "vorssaint"
 cask "whatcable"
 cask "xcodes-app"
 cask "zen"
 
-mas "Amphetamine", id: 937984704
 mas "Microsoft Excel", id: 462058435
 mas "Microsoft OneNote", id: 784801555
 mas "Microsoft PowerPoint", id: 462062816
 mas "Microsoft Word", id: 462054704
-mas "RunCat", id: 1429033973
+mas "SnapView", id: 6762974261
 mas "카카오톡", id: 869223134
 
 uv "headroom-ai[all]"
+uv "huggingface-hub"
 uv "serena-agent"
 
+npm "@openai/codex"
+npm "corepack"
