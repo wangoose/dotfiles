@@ -104,12 +104,15 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # Zsh 
+alias br="brew"
 alias cls="clear"
 alias ls="lsd"
 alias ll="lsd -alhF"
 alias pbc="pbcopy"
 alias pbp="pbpaste"
+alias yd="yadm"
 
+alias ootd="brew outdated; npm outdated -g; uv tool list --outdated"
 alias zrc="vim ~/.zshrc"
 alias zsc="source ~/.zshrc"
 
