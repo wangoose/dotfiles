@@ -24,12 +24,12 @@ cask "postmelee/tap/alhangeul", trusted: true
 cask "betterdisplay"
 cask "bettertouchtool"
 cask "chatgpt"
-cask "chatgpt-classic"
 cask "cmux"
 cask "cyberduck"
 cask "figma"
 cask "font-d2coding-nerd-font"
 cask "font-noto-sans-cjk-kr"
+cask "font-pretendard-jp"
 cask "google-chrome"
 cask "homebrew-app"
 cask "iina"
@@ -68,3 +68,6 @@ uv "serena-agent"
 
 npm "@openai/codex"
 npm "corepack"
+
+# KleanTalk: https://github.com/showmeyourway-sketch/KleanTalk
+# oMLX: https://github.com/jundot/omlx
