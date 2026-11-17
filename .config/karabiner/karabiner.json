@@ -446,7 +446,7 @@
                         ]
                     },
                     {
-                        "description": "F13 + 1/3 → Shift + F7/F7",
+                        "description": "F13 + 1/3 → Command + [ / ]",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -458,6 +458,51 @@
                                 ],
                                 "from": {
                                     "key_code": "1",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "open_bracket",
+                                        "modifiers": ["left_command"]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "f13 pressed",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "3",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "close_bracket",
+                                        "modifiers": ["left_command"]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "F13 + 2/4 → Shift + F7/F7",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "f13 pressed",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "2",
                                     "modifiers": { "optional": ["any"] }
                                 },
                                 "to": [
@@ -477,7 +522,7 @@
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "3",
+                                    "key_code": "4",
                                     "modifiers": { "optional": ["any"] }
                                 },
                                 "to": [{ "key_code": "f7" }],
