@@ -113,6 +113,7 @@ alias pbp="pbpaste"
 alias yd="yadm"
 
 alias ootd="brew outdated; mas outdated; mise outdated; npm outdated -g; uv tool list --outdated"
+alias prune="brew autoremove; brew cleanup --prune=all; mise prune"
 alias zrc="vim ~/.zshrc"
 alias zsc="source ~/.zshrc"
 
