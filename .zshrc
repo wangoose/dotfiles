@@ -112,7 +112,7 @@ alias pbc="pbcopy"
 alias pbp="pbpaste"
 alias yd="yadm"
 
-alias ootd="brew outdated; npm outdated -g; uv tool list --outdated"
+alias ootd="brew outdated; mas outdated; mise outdated; npm outdated -g; uv tool list --outdated"
 alias zrc="vim ~/.zshrc"
 alias zsc="source ~/.zshrc"
 
@@ -273,6 +273,24 @@ scrrrt() {
     --video-buffer=200
 }
 
+xcode-latest() {
+  find /Applications -maxdepth 1 \
+    -name 'Xcode*.app' \
+    ! -name 'Xcode-Latest.app' |
+  while IFS= read -r app; do
+    [[ -f "$app/Contents/Info.plist" ]] || continue
+
+    version=$(/usr/libexec/PlistBuddy \
+      -c 'Print :CFBundleShortVersionString' \
+      "$app/Contents/Info.plist" 2>/dev/null) || continue
+
+    printf '%s\t%s\n' "$version" "$app"
+  done |
+  sort -t '.' -k1,1nr -k2,2nr -k3,3nr |
+  head -n 1 |
+  cut -f2-
+}
+
 # Mise
 eval "$(mise activate zsh)"
 
@@ -341,4 +359,11 @@ ser() {
     --context codex \
     --project "$project"
 }
+
+# oMLX: CLI shim path begin
+case ":$PATH:" in
+  *":$HOME/.omlx/bin:"*) ;;
+  *) export PATH="$HOME/.omlx/bin:$PATH" ;;
+esac
+# oMLX: CLI shim path end
 
