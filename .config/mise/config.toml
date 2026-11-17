@@ -1,5 +1,6 @@
 [tools]
 bun = "latest"
-java = "jetbrains-17"
+java = ["jetbrains-21", "jetbrains-17"]
 node = "lts"
 tuist = "latest"
+
